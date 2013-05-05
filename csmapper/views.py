@@ -1,4 +1,4 @@
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.conf import settings
 from coffin.shortcuts import render_to_response
@@ -38,4 +38,6 @@ def upload(request):
                 response['Content-Disposition'] = 'attachment; filename=%s' % request.POST.get('score_data') + '_score.txt'
                 return response
         else:
-            raise Http404
+            return HttpResponseRedirect('/bioweb/csmapper/')
+    else:
+        return HttpResponseRedirect('/bioweb/csmapper/')
