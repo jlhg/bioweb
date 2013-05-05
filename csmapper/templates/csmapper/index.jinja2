@@ -16,7 +16,7 @@
          {{ upload_form.upload_file|safe }}
        </div>
        <input type="submit", value="Go map">
-       <p>Note: The file format is tab-separated values with three columns: chrname, start and stop</p>
+       <p>Note: The file format is tab-separated values with four columns: seqname, chrname, start and stop</p>
   {% endif %}
 
   {% if error_line is defined %}
