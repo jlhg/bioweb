@@ -1,0 +1,26 @@
+{% extends "csmapper/base.jinja2" %}
+{% block content %}
+
+  {% if upload_form is defined %}
+    <form action="/bioweb/csmapper/upload/" enctype="multipart/form-data" method="post">{% csrf_token %}
+
+       <div class="field_wrapper">
+         <label for="id_score_data">Data Source: </label>
+         {{ upload_form.score_data.0|safe }}
+         {# {{ upload_form.score_data.1|safe }} #}
+         {# {{ upload_form.score_data.2|safe }} #}
+       </div>
+
+       <div class="field_wrapper">
+         {# <label for="id_upload_file">Upload</label> #}
+         {{ upload_form.upload_file|safe }}
+       </div>
+       <input type="submit", value="Go map">
+       <p>Note: The file format is tab-separated values with three columns: chrname, start and stop</p>
+  {% endif %}
+
+  {% if error_line is defined %}
+    <h2>Format Error on Line {{ error_line }}!</h2>
+  {% endif %}
+
+{% endblock content %}
