@@ -16,7 +16,14 @@
          {{ upload_form.upload_file|safe }}
        </div>
        <input type="submit", value="Go map">
-       <p>Note: The file format is tab-separated values with four columns: seqname, chrname, start and stop</p>
+         <div>
+           <p>
+           Note: <br>
+           1. The file format is tab-separated values with four columns: seqname, chrname, start and stop<br>
+           2. Here is the <a href="{{ MEDIA_URL ~ 'csmapper/unknown_transcripts_coordinate.txt' }}"
+           download="unknown_transcripts_coordinate.txt">Sample File</a>.<br>
+           </p>
+         </div>
   {% endif %}
 
   {% if error_line is defined %}
