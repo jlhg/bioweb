@@ -4,6 +4,7 @@ from django.conf import settings
 from coffin.shortcuts import render_to_response
 from csmapper import forms
 import csmap
+import pdb
 
 
 def index(request):
@@ -23,9 +24,14 @@ def upload(request):
                               'vista12': settings.CSMAP_SCOREDATA_VISTA12,
                               'vista6': settings.CSMAP_SCOREDATA_VISTA6}
 
+            if request.POST.get('partial') == 'on':
+                partial = True
+            else:
+                partial = False
+
             csmap_result, error_line = csmap.parse(request.FILES['upload_file'],
                                                    score_filepath.get(request.POST.get('score_data')),
-                                                   request.POST.get('partial'))
+                                                   partial)
 
             if csmap_result is None:
                 # Format Error
