@@ -7,4 +7,5 @@ class UploadFileForm(forms.Form):
                                    choices=[('ucsc15', 'UCSC15WAY'),
                                             ('vista12', 'VISTA12WAY'),
                                             ('vista6', 'VISTA6WAY')])
+    partial = forms.BooleanField(initial=False)
     upload_file = forms.FileField()

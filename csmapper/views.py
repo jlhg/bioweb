@@ -23,7 +23,9 @@ def upload(request):
                               'vista12': settings.CSMAP_SCOREDATA_VISTA12,
                               'vista6': settings.CSMAP_SCOREDATA_VISTA6}
 
-            csmap_result, error_line = csmap.parse(request.FILES['upload_file'], score_filepath.get(request.POST.get('score_data')))
+            csmap_result, error_line = csmap.parse(request.FILES['upload_file'],
+                                                   score_filepath.get(request.POST.get('score_data')),
+                                                   request.POST.get('partial'))
 
             if csmap_result is None:
                 # Format Error
