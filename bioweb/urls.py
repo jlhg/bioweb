@@ -5,8 +5,8 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-                       url(r'^$', include('csmapper.urls')),
-                       url(r'^csmapper/', include('csmapper.urls')),
+                       url(r'^bioweb/', include('csmapper.urls')),
+                       url(r'^bioweb/csmapper/', include('csmapper.urls')),
     # Examples:
     # url(r'^$', 'bioweb.views.home', name='home'),
     # url(r'^bioweb/', include('bioweb.foo.urls')),
