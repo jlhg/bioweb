@@ -2,7 +2,7 @@
 {% block content %}
 
   {% if upload_form is defined %}
-    <form action="/bioweb/csmapper/upload/" enctype="multipart/form-data" method="post">{% csrf_token %}
+    <form action="/csmapper/upload/" enctype="multipart/form-data" method="post">{% csrf_token %}
 
        <div class="field_wrapper">
          <label for="id_score_data">Data Source: </label>

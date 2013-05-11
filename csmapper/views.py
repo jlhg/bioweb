@@ -46,6 +46,6 @@ def upload(request):
                 response['Content-Disposition'] = 'attachment; filename=%s' % request.POST.get('score_data') + '_score.txt'
                 return response
         else:
-            return HttpResponseRedirect('/bioweb/csmapper/')
+            return HttpResponseRedirect('/csmapper/')
     else:
-        return HttpResponseRedirect('/bioweb/csmapper/')
+        return HttpResponseRedirect('/csmapper/')
